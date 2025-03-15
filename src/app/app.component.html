@@ -1,0 +1,22 @@
+<h1>Hola {{userName}} </h1>
+<app-header></app-header>
+<input type="text" name="" id="" [placeholder]="userName" [(ngModel)]="userName" (input)="addOne()"/>
+<h2 (click)="addOne()">{{number}}</h2>
+<h2>Renderizado dinámico con if y else</h2>
+<div *ngIf="number > 5; else elseBlock">
+    <h3>Mayor que 5</h3>
+</div>
+<ng-template #elseBlock>
+    <h3>Menor que 5</h3>
+</ng-template>
+<h2>Bloque for</h2>
+@for(movie of movies; track movie){
+    <p>{{$index}} - {{movie}}</p>
+}
+<ul>
+    @for(persona of personas; track persona.id){
+        <li>Nombre : {{persona.nombre}}</li>
+        <li>Edad : {{persona.edad}}</li>
+    }
+</ul> 
+<app-child [msg]="concatMsg()" [equipo] = "equipo"></app-child>
