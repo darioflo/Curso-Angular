@@ -1,4 +1,29 @@
 <section class="seccion-2">
     <h2>Seccion 2 del Curso Angular</h2>
-    <div [ngClass]="{'box-test': testingBox}"></div>
+    <div [ngClass]="{'box-test': testingBox,'untesting-box': !testingBox }" ></div>
+    <button (click)="setTesing()">Probar caja</button>
+    <form [formGroup]="movieForm" (submit)="handleSubmit()">
+        <fieldset>
+            <label for="movie-name">Movie name</label>
+            <input type="text" id="movie-name" formControlName="nombre">
+            <div *ngIf="name.invalid && name.touched">
+                <p>Nombre Invalido</p>
+            </div>
+        </fieldset>
+        <fieldset>
+            <label for="movie-name">Movie duration</label>
+            <input type="number" id="movie-duration" formControlName="duracion">
+            <div *ngIf="duration.invalid && duration.touched">
+                <p>Duracion Invalida</p>
+            </div>
+        </fieldset> 
+        <fieldset>
+            <label for="movie-name">Movie director</label>
+            <input type="text" id="movie-director" formControlName="director">
+            <div *ngIf="director.hasError('required') && director.touched">
+                <p>Campo requerido</p>
+            </div>
+        </fieldset>
+        <button type="submit" [disabled]="movieForm.invalid">Crear pelicula</button>
+    </form>
 </section>
