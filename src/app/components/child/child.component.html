@@ -1,4 +1,7 @@
-<h2>Componente hijo </h2>
-
-
-<p>{{msg}} como el {{equipo.nombre}}</p>
+<div class="child">
+    <h2>Componente hijo </h2>
+    <p>{{msg}} como el {{equipo.nombre}}</p>
+    <p>{{mensaje()}}</p>
+    <p>Lo mejor del Bayern {{player().nombre}} con numero {{player().numero}} y es de {{player().pais}}</p>
+    <button  (click)="handleLogin()">Login</button>
+</div>

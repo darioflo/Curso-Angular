@@ -3,10 +3,11 @@ import { HeaderComponent } from './components/header/header.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ChildComponent } from "./components/child/child.component";
+import { SectionComponent } from "./components/section/section.component";
 
 @Component({
   selector: 'app-root',
-  imports: [HeaderComponent, FormsModule, CommonModule, ChildComponent],
+  imports: [HeaderComponent, FormsModule, CommonModule, ChildComponent, SectionComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -34,10 +35,18 @@ export class AppComponent {
   ]
   textoPadre: string = "sigue adelante!!!"
 
+  slogan : string = "ten fé"
+
   equipo : any = {
     nombre: "Bayern Munich",
     champions: 6,
-  } 
+  }
+  
+  jugador : any = {
+    nombre: "Michael Olise",
+    numero: 17,
+    pais: "Francia"
+  }
 
   addOne(){
     this.number += 1
@@ -45,5 +54,13 @@ export class AppComponent {
 
   concatMsg(){
     return `${this.userName} ${this.textoPadre}`
+  }
+
+  upperCase(){
+    return this.slogan.toUpperCase()
+  }
+
+  setName(e: string){
+    this.userName = e
   }
 }

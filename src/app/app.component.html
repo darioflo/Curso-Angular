@@ -3,20 +3,34 @@
 <input type="text" name="" id="" [placeholder]="userName" [(ngModel)]="userName" (input)="addOne()"/>
 <h2 (click)="addOne()">{{number}}</h2>
 <h2>Renderizado dinámico con if y else</h2>
-<div *ngIf="number > 5; else elseBlock">
+
+<!--Para declarar el if se pone la condicion del ngIf dentro de la etiqueta del contenedor padre de lo que se va a
+mostrar si la condicion se cumple luego para declarar el else  se pone la coma y lo que se ve en el ejercicio-->
+
+<div *ngIf="number > 5; else elseBlock"> // if de angular
     <h3>Mayor que 5</h3>
 </div>
+
+<!--para realizar el else se declara ngTemplate y con el #elseBlock y debajo lo que se muestra si la condicion es falsa-->
 <ng-template #elseBlock>
     <h3>Menor que 5</h3>
 </ng-template>
 <h2>Bloque for</h2>
-@for(movie of movies; track movie){
-    <p>{{$index}} - {{movie}}</p>
-}
-<ul>
-    @for(persona of personas; track persona.id){
-        <li>Nombre : {{persona.nombre}}</li>
-        <li>Edad : {{persona.edad}}</li>
-    }
-</ul> 
-<app-child [msg]="concatMsg()" [equipo] = "equipo"></app-child>
+
+
+<!--En el for  se declara el ngFor  dentro del componente que va a encerrar los elementos que va a mostrar el iterador 
+y se declara el indice-->
+<div *ngFor="let movie of movies; index as i">
+    <p>{{i}}-{{movie}}</p>
+</div>
+<ul *ngFor="let persona of personas; index as i">
+    <li>{{persona.nombre}} tiene {{persona.edad}}</li>
+</ul>
+
+
+<!--para pasar elementos de padre a hijo entre corchetes va la propiedad como se declaro en el ts del componente
+hijo y despues del igual va el metodo o la variable que viene del ts del componente padre-->
+<app-child [msg]="concatMsg()" [equipo] = "equipo" [mensaje]="upperCase()" [player]="jugador" (form)="setName($event)"></app-child>
+
+
+<app-section></app-section>
