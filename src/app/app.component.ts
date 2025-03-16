@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ChildComponent } from "./components/child/child.component";
 import { SectionComponent } from "./components/section/section.component";
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { routes } from './app.routes';
 
 @Component({
   selector: 'app-root',
-  imports: [HeaderComponent, FormsModule, CommonModule, ChildComponent, SectionComponent],
+  imports: [FormsModule, CommonModule, ChildComponent, SectionComponent,RouterModule,RouterOutlet,HeaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

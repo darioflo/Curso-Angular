@@ -4,6 +4,8 @@ import Producto from '../models/Product';
 @Injectable({
   providedIn: 'root'
 })
+
+//LOS SERVICIOS SON INSTANCIAS GLOBALES EN ANGULAR
 export class ProductService {
 
     product : Producto
@@ -16,7 +18,6 @@ export class ProductService {
 
     }
   }
-
 
   setProductName(nombreNuevo : string):void {
     this.product.nombre = nombreNuevo 

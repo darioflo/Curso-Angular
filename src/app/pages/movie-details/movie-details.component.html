@@ -1,0 +1,10 @@
+<app-header></app-header>
+
+<div class="selectedMovie" *ngIf="selectedMovie; else elseBlock">
+<p>{{selectedMovie.nombre}}</p>
+<p>{{selectedMovie.duracion}}</p>
+<p>{{selectedMovie.director}}</p>
+</div>
+<ng-template #elseBlock>
+    <p>No existe esa pelicula</p>
+</ng-template>

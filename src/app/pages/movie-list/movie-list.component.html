@@ -1,0 +1,10 @@
+<app-header></app-header>
+<div class="section-movies">
+        <div class="movies" *ngFor="let movie of movieService.movies, index as i">
+          <a [routerLink]="movie.nombre">
+            <h3>{{movie.nombre}}</h3>
+            <p>{{movie.duracion}}</p>
+            <p>{{movie.director}}</p>
+          </a>
+        </div>
+</div>
