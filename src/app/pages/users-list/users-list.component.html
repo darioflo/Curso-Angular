@@ -1,0 +1,13 @@
+<app-header></app-header>
+<p>Users</p>
+<div class="userlist">
+<ul  *ngFor="let user of userServices.users, index as i">
+    <li class="user">
+            <a [routerLink]="user.id.toString()">
+            <h2>{{i + 1}}</h2>
+            <h2>{{user.name}}</h2>
+            <button (click)="deleteUser(user.id)">Borrar usuario</button>
+        </a>
+    </li>
+</ul>
+</div>

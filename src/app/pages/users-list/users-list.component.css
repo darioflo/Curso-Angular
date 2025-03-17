@@ -1,0 +1,18 @@
+.userlist{
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 1rem;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: medium solid tan;
+}
+
+.user{
+    width: 10rem;
+    height: auto;
+    border: medium solid salmon;
+    padding: 1rem;
+}

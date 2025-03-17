@@ -1,0 +1,26 @@
+<app-header></app-header>
+<form [formGroup] = "userForm" class="form">
+    <fieldset>
+        <label for="user-id">User id</label>
+        <input type="text" id="user-id" formControlName="id">
+    </fieldset>
+    <fieldset>
+        <label for="user-name">User name</label>
+        <input type="text" id="user-name" formControlName="name">
+    </fieldset>
+    <fieldset>
+        <label for="user-email">User email</label>
+        <input type="text" id="user-email" formControlName="email">
+    </fieldset>
+    <form [formGroup]="address">
+        <fieldset>
+            <label for="user-street">User street</label>
+            <input type="text" id="user-street" formControlName="street">
+        </fieldset>
+        <fieldset>
+            <label for="user-city">User city</label>
+            <input type="text" id="user-city" formControlName="city">
+        </fieldset>
+    </form>
+    <button type="submit" (click)="createUser()">Crear usuario</button>
+</form>

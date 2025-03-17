@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from './components/header/header.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -13,7 +13,7 @@ import { routes } from './app.routes';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Curso-Angular';
   userName : string = "Darío"
   number : number = 0
@@ -64,5 +64,9 @@ export class AppComponent {
 
   setName(e: string){
     this.userName = e
+  }
+
+  ngOnInit(): void {
+    
   }
 }
